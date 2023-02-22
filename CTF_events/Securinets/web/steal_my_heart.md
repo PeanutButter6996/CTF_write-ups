@@ -14,7 +14,7 @@ After that, it will execute this command,<br />
 
 This command set the width to x, meaning if the website generate the corrent number, it will then shorten that secret string, adding the placeholder "nope" at the end. Basically, secret+nope at the end. However, there's a vunerability in here. With the help of ChatGPT xD, i know that, if the exact number is generated, then it will print out the secret for us without the placeholder nope at the end.<br />
 
-So now we got that in mind, lets take a look at the website(since the website is down, i deploy it locally, bu the problem is i dont know what is the secret, so i'll have to change the secret to something else, but it doesn't really affect that much)
+So now we got that in mind, lets take a look at the website(since the website is down, i deploy it locally, but the problem is i dont know what is the secret, so i'll have to change the secret to something else, but it doesn't really affect that much)
 ![image](https://user-images.githubusercontent.com/109911533/220532386-558a7aab-e20e-4ab8-8dd7-9dc94141219f.png)<br />
 ![image](https://user-images.githubusercontent.com/109911533/220532548-65eb5fde-1c9d-4176-9d9e-cb960f911339.png)<br />
 
