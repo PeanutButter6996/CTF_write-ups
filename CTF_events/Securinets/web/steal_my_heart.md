@@ -12,7 +12,7 @@ It then get the length of that "SECRETT", and generate a random number between 1
 After that, it will execute this command,<br />
 ![Screenshot 2023-02-22 122438](https://user-images.githubusercontent.com/109911533/220530452-9114265d-f712-4a2d-89aa-e147bafc97cc.png)<br />
 
-This command set the width to x, meaning if the website generate the corrent number, it will the shorten that secret string, adding the placeholder "nope" at the end. Basically, secret+nope at the end. However, there's a vunerability in here. With the help of ChatGPT xD, i know that, if the exact number is generated, then it will print out the secret for us without the placeholder nope at the end.<br />
+This command set the width to x, meaning if the website generate the corrent number, it will then shorten that secret string, adding the placeholder "nope" at the end. Basically, secret+nope at the end. However, there's a vunerability in here. With the help of ChatGPT xD, i know that, if the exact number is generated, then it will print out the secret for us without the placeholder nope at the end.<br />
 
 So now we got that in mind, lets take a look at the website(since the website is down, i deploy it locally, bu the problem is i dont know what is the secret, so i'll have to change the secret to something else, but it doesn't really affect that much)
 ![image](https://user-images.githubusercontent.com/109911533/220532386-558a7aab-e20e-4ab8-8dd7-9dc94141219f.png)<br />
