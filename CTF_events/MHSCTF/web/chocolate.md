@@ -88,6 +88,7 @@ print(encode("BATMAN", "{'admin':'true'}"))
 ```
 <br />
 The # comment i use is when i got the secret key, which is "BATMAN", then i comment all the code out, and use the encode function to encode "BATMAN" with admin setting to true.<br />
+
 ![image](https://user-images.githubusercontent.com/109911533/220864698-c3f3b177-97a8-422e-a1ed-04c66fffc086.png)<br />
 
 Now we got that, lets copy and paste it on to the website cookie, and there you have it, the FLAG.<br />
