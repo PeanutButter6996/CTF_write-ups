@@ -31,7 +31,7 @@ After some tries, the command that we need to use is envars, which return us sec
 
 Decode it with base64 and we got the full flag.
 
-___Flag:Securinets{1f_h3_l0v3s_y0u,_tha7's_th3_m05t_d4ng3rous_th1ng._YOU,_Netflix!}___
+___Flag: Securinets{1f_h3_l0v3s_y0u,_tha7's_th3_m05t_d4ng3rous_th1ng._YOU,_Netflix!}___
 
 
 
