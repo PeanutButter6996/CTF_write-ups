@@ -112,7 +112,32 @@ with open("rockyou.txt", errors="ignore") as file:
 
 ### 5. Didactic Octo Paddles ###
 - This challenge is about JWT token and Node.js SSTI.<br />
-- 
+- First, looking through the given source code, we can see there's a route called ```/admin``` which may give us access to the admin page.<br />
+- Register and Login, you should see a session cookie which is a JWT Token, decode it return something like this.<br />
+    
+ ![image](https://user-images.githubusercontent.com/109911533/228418179-fa77d3b2-bb6c-476d-86bd-3b2636ad2715.png)
+
+- Now in the file ```AdminMiddleware.js```, we can see its checking for the ```alg``` and ```user.id```. If success, it'll return us the admin page.<br />
+- If the ```alg==HS256```, it will return us as user, whether ```alg==none``` will redirect us back to the login page. So to bypass this, we can you a varieties form of ```none```, like ```None, nOne, NoNe, NONE,...```. This should bypass the ```alg``` checking function.<br />
+- Now, for the ```user.id```, its very common for these type of challenges that the admin ```id``` will be ```1```, since admin is the first guy to create and added to the database. So now, we just need to change ```alg:NONE``` and ```id:1```. This should redirect us to the admin page.(Remember after changing the two variables, delete the last part of the payload).<br />
+- The JWT token should now be<br />
+```eyJhbGciOiJOb25lIiwidHlwIjoiSldUIn0.eyJpZCI6MSwiaWF0IjoxNjc5NTYwOTYwLCJleHAiOjE2Nzk1NjQ1NjB9.```<br />
+    
+![image](https://user-images.githubusercontent.com/109911533/228421571-c3b1e49a-96b8-4311-a1e3-162a2873d07b.png)<br />
+
+- Now we should be able to see the admin page, here i login as user ```a```<br />
+![image](https://user-images.githubusercontent.com/109911533/228420867-6ab8aec0-d8c8-476f-8154-ce2737f5b27a.png)
+
+- So, now what do we do to get the flag? If you read the code about the ```/admin``` route, you will see they are using ```jsrender.templates```. If you read the document about it, you'll know that you can pass in template expressions and it will process them, then output it to the screen. Here the ```jsrender.templates``` is using the variable ```username```. So we can confirm that there's a JsRender Node.js SSTI vulnerability in ```username```.<br />
+- Reading about it, i found this playload that we can use ```{{:"pwnd".toString.constructor.call({},"return global.process.mainModule.constructor._load('child_process').execSync('cat /flag.txt').toString()")()}}```<br />
+- Now we take that payload, register it as a user, and go to the admin page to get the flag.<br />
+    
+![image](https://user-images.githubusercontent.com/109911533/228422188-d4093b4f-3092-455e-b388-70d78b538700.png)<br />
+
+
+    
+ 
+
 
 
 
