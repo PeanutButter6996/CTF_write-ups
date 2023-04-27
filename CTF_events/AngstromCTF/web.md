@@ -17,7 +17,7 @@
 **Flag: actf{wait_until_farewell_speedrun}**
 
 ## 3. Shortcircuit ##
-- Simple crypto-web challenge
+- Simple crypto-web challenge, solved by my friend ```Giapppp```, you can check out other crypto challenges from different CTF solved by him here ```https://github.com/Giapppp```
 - Flag contains 120 characters which is divided to 4 chunks, each contains 30 characters.
 - Then they are swapped between each other
 - Should be easy since it begins with ```actf{``` and ends with ```}```.
