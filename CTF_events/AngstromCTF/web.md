@@ -25,9 +25,11 @@
 **Flag: actf{cl1ent_s1de_sucks_ffa92516317199e454f4d2bdb04d9e419ccc7544e67ef12024523398ee02fe7517f7e08250c4aaa9ed206fd7c9e398e2}**
 
 ## 4. Directory ##
-- The challenge gives us a website with 5000 directories and told us to find the flag in one of the directories.
-- It's imposible to do it by hand, but with BurpSuite Intruder, bruteforcing should take less than 5 minutes.
+- The challenge gives us a website with 5000 directory, and one of them contains the flag.
+- Using Burp Intruder, bruteforcing should take less than 5 minutes.
 
-![image](https://user-images.githubusercontent.com/109911533/234902245-c390a292-6875-42f1-9a88-207c7c3fd5ec.png)
+![image](https://user-images.githubusercontent.com/109911533/234902918-4a85c977-1ec7-490e-8e7f-5657808a0a97.png)
 
 **Flag:actf{y0u_f0und_me_b51d0cde76739fa3}**
+
+
