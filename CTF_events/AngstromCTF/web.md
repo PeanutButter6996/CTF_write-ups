@@ -80,3 +80,7 @@ async def app(scope, receive, send):
 ![image](https://user-images.githubusercontent.com/109911533/234905527-218f597e-954d-499d-8ca6-800910669c50.png)
 
 **Flag: actf{reaching_the_core__chapter_8}**
+
+## 5. Hallmark ##
+#### This is my first ever XSS-Admin bot challenge i solved, it's very fun to be able to learn XSS and solved it xDDD. Let us begin, shall we? ####
+- The challenge gives us a source code and 2 website, one is a card generator and the other is an Admin Bot
