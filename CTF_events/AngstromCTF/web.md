@@ -32,4 +32,51 @@
 
 **Flag:actf{y0u_f0und_me_b51d0cde76739fa3}**
 
+## 5. Celeste Tunneling Association ##
+- The challnge give us a source, let's take a look
+```py
+import os
 
+SECRET_SITE = b"flag.local"
+FLAG = os.environ['FLAG']
+
+async def app(scope, receive, send):
+    assert scope['type'] == 'http'
+
+    headers = scope['headers']
+
+    await send({
+        'type': 'http.response.start',
+        'status': 200,
+        'headers': [
+            [b'content-type', b'text/plain'],
+        ],
+    })
+
+    # IDK malformed requests or something
+    num_hosts = 0
+    for name, value in headers:
+        if name == b"host":
+            num_hosts += 1
+
+    if num_hosts == 1:
+        for name, value in headers:
+            if name == b"host" and value == SECRET_SITE:
+                await send({
+                    'type': 'http.response.body',
+                    'body': FLAG.encode(),
+                })
+                return
+
+    await send({
+        'type': 'http.response.body',
+        'body': b'Welcome to the _tunnel_. Watch your step!!',
+    })
+```
+- Basically, the server is checking for the host header. If the head exists, then it checks for the value of the head whether it's equal to the secret value or not, then it would return us the flag.
+- However looking at the source code closely, you can see that the secret value is ``` SECRET_SITE = b"flag.local" ```.
+- Using Burp, changing the value of the ```Host``` header to ```flag.local``` to get the flag.
+
+![image](https://user-images.githubusercontent.com/109911533/234905527-218f597e-954d-499d-8ca6-800910669c50.png)
+
+**Flag: actf{reaching_the_core__chapter_8}**
